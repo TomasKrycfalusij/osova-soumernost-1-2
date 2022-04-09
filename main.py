@@ -32,7 +32,7 @@ def vytvareni_trojuhelniku():
         y -= 1
         x += 1
         led.plot(x, y)
-        y += 1
+        y += 1 #prehozeni na druhou stranu
         x += 3
         #---------------------------------
         led.plot(x, y)
@@ -42,7 +42,7 @@ def vytvareni_trojuhelniku():
         y -= 1
         x += 1
         led.plot(x, y)
-        y += 1
+        y += 1 #prehozeni x, y do puvodnich pozic
         x -= 1
 #-----------------------------------------
     elif smer == 2:
