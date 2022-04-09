@@ -16,14 +16,12 @@ elif y == 1 or y == 2 or y == 3:
     smer = randint(1, 3)
 elif y == 4:
     smer = 1
-print(y)
-print(smer)
 
 #1 = smer nahoru
 #2 = smer rovne
 #3 = smer dolu
 
-#GVYTVARENI TROJUHELNIKU PODLE SMERU
+#VYTVARENI TROJUHELNIKU PODLE SMERU
 def vytvareni_trojuhelniku():
     global x, y
     if smer == 1:
@@ -34,9 +32,8 @@ def vytvareni_trojuhelniku():
         y -= 1
         x += 1
         led.plot(x, y)
-        x += 1
         y += 1
-        x += 2
+        x += 3
         #---------------------------------
         led.plot(x, y)
         for i in range(2):
@@ -45,9 +42,8 @@ def vytvareni_trojuhelniku():
         y -= 1
         x += 1
         led.plot(x, y)
-        x += 1
         y += 1
-        x -= 2
+        x -= 1
 #-----------------------------------------
     elif smer == 2:
         led.plot(x, y)
@@ -78,9 +74,8 @@ def vytvareni_trojuhelniku():
         y += 1
         x += 1
         led.plot(x, y)
-        x += 1
+        x += 3
         y -= 1
-        x += 2
         #---------------------------------
         led.plot(x, y)
         for i in range(2):
@@ -89,9 +84,8 @@ def vytvareni_trojuhelniku():
         y += 1
         x += 1
         led.plot(x, y)
-        x += 1
+        x -= 1
         y -= 1
-        x -= 2
     
 #ZABLIKANI
 for o in range(3):

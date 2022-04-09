@@ -20,12 +20,10 @@ if (y == 0) {
     smer = 1
 }
 
-console.log(y)
-console.log(smer)
 // 1 = smer nahoru
 // 2 = smer rovne
 // 3 = smer dolu
-// GVYTVARENI TROJUHELNIKU PODLE SMERU
+// VYTVARENI TROJUHELNIKU PODLE SMERU
 function vytvareni_trojuhelniku() {
     let i: number;
     
@@ -38,9 +36,8 @@ function vytvareni_trojuhelniku() {
         y -= 1
         x += 1
         led.plot(x, y)
-        x += 1
         y += 1
-        x += 2
+        x += 3
         // ---------------------------------
         led.plot(x, y)
         for (i = 0; i < 2; i++) {
@@ -50,9 +47,8 @@ function vytvareni_trojuhelniku() {
         y -= 1
         x += 1
         led.plot(x, y)
-        x += 1
         y += 1
-        x -= 2
+        x -= 1
     } else if (smer == 2) {
         // -----------------------------------------
         led.plot(x, y)
@@ -86,9 +82,8 @@ function vytvareni_trojuhelniku() {
         y += 1
         x += 1
         led.plot(x, y)
-        x += 1
+        x += 3
         y -= 1
-        x += 2
         // ---------------------------------
         led.plot(x, y)
         for (i = 0; i < 2; i++) {
@@ -98,9 +93,8 @@ function vytvareni_trojuhelniku() {
         y += 1
         x += 1
         led.plot(x, y)
-        x += 1
+        x -= 1
         y -= 1
-        x -= 2
     }
     
 }
