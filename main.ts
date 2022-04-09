@@ -20,15 +20,51 @@ if (y == 0) {
     smer = randint(1, 2)
 }
 
+// 1 = smer nahoru
+// 2 = smer rovne
+// 3 = smer dolu
 // GVYTVARENI TROJUHELNIKU PODLE SMERU
-if (smer == 1) {
-    led.plot(x, y)
-    for (i = 0; i < 2; i++) {
-        x -= 1
+function vytvareni_trojuhelniku() {
+    let i: number;
+    
+    if (smer == 1) {
         led.plot(x, y)
+        for (i = 0; i < 2; i++) {
+            x -= 1
+            led.plot(x, y)
+        }
+        y -= 1
+        x += 1
+        led.plot(x, y)
+        x += 1
+        y += 1
     }
-    y -= 1
-    x += 1
-    led.plot(x, y)
+    
+    if (smer == 3) {
+        led.plot(x, y)
+        for (i = 0; i < 2; i++) {
+            x -= 1
+            led.plot(x, y)
+        }
+        y += 1
+        x += 1
+        led.plot(x, y)
+        x += 1
+        y -= 1
+    }
+    
 }
 
+// ZABLIKANI
+for (let o = 0; o < 3; o++) {
+    vytvareni_trojuhelniku()
+    basic.pause(1000)
+    a = 2
+    b = 0
+    basic.clearScreen()
+    for (i = 0; i < displej; i++) {
+        led.plotBrightness(a, b, 100)
+        b += 1
+    }
+    basic.pause(1000)
+}
